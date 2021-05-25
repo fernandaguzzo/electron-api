@@ -14,7 +14,7 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
   });
 
   mainWindow.loadURL(url.format({
@@ -22,6 +22,8 @@ const createWindow = () => {
     protocol: 'file:',
     slashes: true
   }));
+
+  mainWindow.setMenu(null);
 
   mainWindow.on('closed', () => {
     mainWindow = null;

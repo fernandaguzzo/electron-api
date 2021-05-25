@@ -1,18 +1,17 @@
 import React from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import Home from './screens/Home';
+import DeliverymenList from './screens/DeliverymenList';
 
-export default class App extends React.Component {
-    dummy = () => {
-        // Just to test arrow functions
-    }
-
-    render() {
-        return (
-            <div className={'hello'}>
-                <h2>Hello Electrate</h2>
-                <img src="./assets/logo.png" />
-                <h4>A basic Electron + React.js template</h4>
-                <h4>Have Fun!</h4>
-            </div>
-        );
-    }
+const App = () => {
+    return (
+        <HashRouter>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/deliverymenList" component={DeliverymenList} />
+            </Switch>
+        </HashRouter>
+    );
 }
+
+export default App;
